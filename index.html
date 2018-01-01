@@ -5,18 +5,19 @@
 <meta name="viewport" content="width=device-width;initial-scale=1" />
 <title>WintopTech</title>
 <style type="text/css">
+body{background:#f5f5f5;}
 *{padding:0px;margin:0px;font-family:"arial";font-size:16px;}
 ul li{list-style:none;}
 a{text-decoration:none;color:black;cursor:pointer}
-.nag{width:890px;height:auto;margin:0 auto;position:relative;background:none}
+.nag{width:960px;height:auto;margin:0 auto;position:relative;background:none}
 .logo{width:300px;padding-top:10px}
 .menu{width:auto;height:auto;bottom:0px;right:0px;position:absolute;}
-.menu li{float:left;width:80px;height:30px;margin-left:2px;text-align:center;line-height:30px;}
-.menu a:hover{border-bottom:2px solid blue;padding:5px 5px}
-.poster{width:890px;height:500px;margin:10px auto;background:grey;overflow:hidden;position:relative}
+.menu li{float:left;width:80px;height:30px;margin-left:2px;text-align:center;line-height:30px;font-weight:bold;}
+/*Í¼Æ¬ÂÖ²¥*/
+.poster{width:960px;height:500px;margin:10px auto;background:grey;overflow:hidden;position:relative}
 .po_content img{width:100%;height:500px;}
 
-.butt{width:890px;margin:0 auto;position:absolute;z-index:9999;top:40%;left:0px;height:80px;}
+.butt{width:960px;margin:0 auto;position:absolute;z-index:9998;top:40%;left:0px;height:80px;cursor:pointer}
 .butt a{width:80px;height:80px;display:block}
 .prev a{background:url(images/sp_jt.gif) no-repeat 0px -160px;}
 .prev a:hover{ background:url(images/sp_jt.gif) no-repeat 0px -240px; }
@@ -24,32 +25,155 @@ a{text-decoration:none;color:black;cursor:pointer}
 .next a{background:url(images/sp_jt.gif) no-repeat -80px -160px;}
 .next{float:right}
 .prev{float:left}
+/*Ö÷ÒªÄÚÈÝ*/
+.Content{width:960px;height:500px;margin:0 auto;position:relative;}
+.service{width:400px;height:500px;position:absolute;float:left;}
+.img-box{width:360px;height:250px;}
+.img-box img{width:360px;height:250px;border-top-left-radius:5px; border-top-right-radius:5px;}
+.txt-box{width:320px;height:210px;}
+.txt-box {text-align:center; background:#fff; padding:20px;}
+.txt-box h3 { font-size:24px; color:#454545; margin:0px;padding:10px 0px 10px 0px; }
+.txt-box p { margin:0px; font-size:18px; color:#454545; line-height:22px; padding-bottom:20px;}
+.txt-box .button { background:#454545; color:#fff;font-size:20px; border-radius:5px; padding:10px 20px;}
+.txt-box .button:hover { background:#6bbfff;}
+.newproducts{width:590px;height:500px;background:#CCCCCC;position:absolute;right:0px;border-radius:5px;text-align:center}
+/*µ¯¿ò*/
+.showup{width:960px;height:500px;z-index:9999;display:none;background:grey;position:absolute;margin-left:14.5%;overflow:hidden;filter:opacity(0.1)}
+.showup iframe{width:960px;height:480px;}
+.showup a{text-decoration:none;float:right;top:0px;color:white;font-size:20px;}
+/*Î²²¿*/
+.footer-sec{ width:960px;height:200px;background:#2f3539; margin:0px auto;}
+.foot-1 {float:left;margin-left:70px;}
+.foot-1 h4 { margin:0px; font-family: 'ProximaNovaBold', Arial, Helvetica, sans-serif; font-size:22px; color:#fff; padding-bottom:15px;}
+.foot-1 ul { margin:0px; padding:0px;}
+.foot-1 ul li { list-style:none; margin:0px; padding-bottom:10px;color:white}
+.foot-1 ul li a { color:#fff; font-size:18px; font-family: 'ProximaNovaRegular'; text-decoration:none;}
+.foot-1 ul li a:hover { color:#6bbfff;}
+.foot-1 p { margin:0px; font-family: 'ProximaNovaRegular'; font-size:18px; color:#fff; line-height:25px; padding-bottom:35px;}
+/*facebook twiter*/
+.social{
+	width:130px;float:left;
+}
+.social a { width:32px; height:32px; background:url(images/social.png) no-repeat; float:left; margin-right:10px; transition: all 0.5s ease;}
+
+.facebook a { width:32px; height:32px; display:block; background-position:0px 0px; }
+.facebook a:hover { width:32px; height:32px; display:block; background-position:0px -32px; }
+
+.twitter a { width:32px; height:32px; display:block; background-position:-40px 0px;}
+.twitter a:hover { width:32px; height:32px; display:block; background-position:-40px -32px; }
+
+.gplus a { width:32px; height:32px; display:block; background-position:-80px 0px;}
+.gplus a:hover { width:32px; height:32px; display:block; background-position:-80px -32px; }
 </style>
+<script type="text/javascript">
+window.onload=function(){Menu1(0),changealltime()};
+var page=0; 
+var s;
+function changealltime(){
+	var a=document.getElementById("changeimg").getElementsByTagName('li');
+	for(var i=0;i<a.length;i++){a[i].style.display="none";};
+	if(page==2)
+	{page=0;}else{
+	page+=1;}
+	a[page].style.display="block";
+	s=setTimeout('changealltime()',3000);
+}
+function stop(){	  
+	 clearTimeout(s);
+}
+function Menu1(num){
+var a=document.getElementById("menuu").getElementsByTagName('a'); 
+for(var i=0;i<a.length;i++){a[i].style.border="0px";};
+ a[num].style.borderBottom="2px solid blue";
+ a[num].style.padding="5px 5px";
+}
+function Changeleft(num){
+var a=document.getElementById("changeimg").getElementsByTagName('li'); 
+for(var i=0;i<a.length;i++){a[i].style.display="none";};
+ if(page==0){a[2].style.display="block";page=2;}else{page+=num;a[page].style.display="block";}
+}
+function Changeright(num){
+var a=document.getElementById("changeimg").getElementsByTagName('li'); 
+for(var i=0;i<a.length;i++){a[i].style.display="none";};
+ if(page==2){a[0].style.display="block";page=0;}else{page+=num;a[page].style.display="block";}
+}
+function showshow(num){
+	var a=document.getElementById("showup1");
+ 	if(num==1){
+	a.style.display="block";}
+	else{ a.style.display="none";}
+}
+</script>
 </head>
 <body>
+<div class="showup" id="showup1"><a onclick="showshow(0)">close</a><iframe src="about-us.html"></iframe></div>
 <div class="nag">
- <div class="logo"><img src="images/wintop.png" style="width:230px;height:95px" /></div>
- <div class="menu">
-	<ul>
-	<li><a href="#" class="home">Home</a></li>
-	<li><a href="#">Mobile</a></li>
-	<li><a href="#">CCTV</a></li>
-	<li><a href="#">Support</a></li>
-	<li><a href="#">About us</a></li>
+ <div class="logo"><a onclick="showshow(1)"><img src="images/wintop.png" style="width:230px;height:95px"/></a></div>
+ <div class="menu" >
+	<ul id="menuu">
+	<li><a href="#" class="home" onclick="Menu1(0)">Home</a></li>
+	<li><a href="#" onclick="Menu1(1)">Mobile</a></li>
+	<li><a href="#" onclick="Menu1(2)">CCTV</a></li>
+	<li><a href="#" onclick="Menu1(3)">Support</a></li>
+	<li><a href="#" onclick="Menu1(4)">About us</a></li>
 	</ul>
   </div>
 </div>
-<div class="poster">
+<div class="poster" id="poststop">
 	<div class="po_content">
-		<ul>
-			<li><a href="#"><img src="images/ueboom.JPG"/></a></li>
+		<ul id="changeimg">
+		    <li><a href="#" onmouseout="changealltime()" onmouseover="stop()"><img src="images/HP250.JPG"/></a></li>
+			<li><a href="#" onmouseout="changealltime()" onmouseover="stop()"><img src="images/ueboom.JPG"/></a></li>
+			<li><a href="#" onmouseout="changealltime()" onmouseover="stop()"><img src="images/A1.JPG"/></a></li>
 		</ul>
 	</div>
-	<div class="butt">
-		<span class="prev "><a href="#"></a></span> <span class="next"><a href="#"></a></span>
+	<div class="butt" onmouseout="changealltime()" onmouseover="stop()">
+		<span class="prev" onclick="Changeleft(-1)" ><a href="#"></a></span>
+		 <span class="next" onclick="Changeright(1)"><a href="#"></a></span>
 	</div>
-	
+</div>
+<div class="Content">
+ <div class="service">
+	 <div class="img-box"><img src="images/service1.jpg" alt="Service1"></div>
+	 <div class="txt-box">
+	 <h3>Service Name</h3>
+	 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	 <a href="#" class="button radius"> Read More</a>
+	 </div>
+ </div>
+ <div class="newproducts"><h3>New Products</h3></div>
 </div>
 
+<div class="footer-sec"> 
+	 <div class="foot-1">
+		 <h4>Quick Links</h4>
+		 <ul>
+		 <li><a href="index.html" title="Home">Home</a></li>
+		 <li><a href="about-us.html" title="About Us">Mobile<a/></li>
+		 <li><a href="faq.html" title="FAQs">CCTV</a></li>
+		 <li><a href="services.html" title="Services">Supports</a></li>
+		 <li><a href="contact.html" title="Contact">About us</a></li>
+		 </ul>
+	 </div>
+	 <div class="foot-1">
+		 <h4>Address</h4>
+		 <ul>
+		 <li>P.O BOX 411 BOROKO NCD PAPUA NEW GUINEA<br>
+		 (1675) 7166 6999</li>
+		 <li><a href="poster@wintoppng.com" target="_blank">poster@wintoppng.com</a></li>
+		 <li><a href="tel:(675) 7166 6999" target="_blank">(675) 7166 6999</a></li>
+		 </ul>
+	 </div>
+	 <div class="foot-1">
+		 <h4>Follow Us</h4>
+		 <div class="social">
+		 <div class="facebook"><a href="#" class="facebook"></a></div>
+		 <div class="twitter"><a href="#" class="twitter"></a></div>
+		 <div class="gplus"><a href="#" class="gplus"></a></div>
+		 </div>
+	 </div>
+</div>
 </body>
+
+
 </html>
